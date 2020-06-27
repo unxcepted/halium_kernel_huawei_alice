@@ -575,7 +575,7 @@ static int sock_setbindtodevice(struct sock *sk, char __user *optval,
 	/* < DTS2015012106130 guoxiaojie 00276951 2015.01.22
 		double cell concurrent download feature */
 	ret = -EPERM;
-	if (!ns_capable(net->user_ns, CAP_NET_RAW) && !in_egroup_p(AID_INET))
+	if (!ns_capable(net->user_ns, CAP_NET_RAW))
 		goto out;
 	/* DTS2015012106130 guoxiaojie 00276951 2015.01.22
 		double cell concurrent download feature > */
